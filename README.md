@@ -14,7 +14,10 @@ I also did some research to figure out the easy way of getting a variables lengt
 
 The rest is simple regex as pointed by Harry, using the bash shorthand ``[[ ]]``.
 
-We can of course `&&` these together to fit in one statement as the original problem describes.
+We can of course use `&&` these together to fit in one statement as the original problem describes.
+
+While doing research, I also found out that you can use the Posix character class [:alnum:] to match to any alphanumeric character. So an alternative solution to checking duplicate characters would use `` if [[ $1 =~ [[:alnum:]].*[[:alnum:]] ]] ; then``, to produce a more "bash-readable" solution.
+
 
 
 ## Code
